@@ -1,0 +1,19 @@
+venv/
+__pycache__/
+*.pyc
+.env
+
+# PyInstaller build output (regenerable via build.bat / make build)
+build/
+dist/
+*.spec
+
+# Local documents and generated embeddings are personal/local-only
+data/*
+!data/.gitkeep
+vector_store/*
+!vector_store/.gitkeep
+settings.json
+
+# User's local backup archives
+*.zip

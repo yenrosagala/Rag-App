@@ -1,0 +1,32 @@
+# --- Orchestration ---
+langchain>=0.2.11,<0.3
+langchain-community>=0.2.10,<0.3
+langchain-text-splitters>=0.2.2,<0.3
+# langchain-community 0.2.x still imports langchain_core.pydantic_v1, a
+# compatibility shim removed in langchain-core 0.3+. Without this pin, pip
+# can resolve a newer langchain-core that breaks that import at runtime
+# (ModuleNotFoundError: No module named 'langchain_core.pydantic_v1').
+langchain-core>=0.2.27,<0.3
+
+# --- Local vector store ---
+chromadb>=0.5.5,<0.6
+
+# --- Local embeddings (runs fine on CPU-only laptops) ---
+sentence-transformers>=3.0.1,<4.0
+
+# --- Document loading ---
+pypdf>=4.3.1,<5.0
+
+# --- LLM backends ---
+# Local, offline inference via Ollama (recommended default for laptops)
+langchain-ollama>=0.1.1,<0.2
+# Optional: swap to a hosted API instead of/alongside Ollama
+# (langchain-openai pulls the openai package in as its own dependency)
+langchain-openai>=0.1.19,<0.2
+
+# --- Desktop UI ---
+# Tkinter ships with standard CPython on Windows/macOS; on some Linux
+# distros install it via the OS package manager (e.g. `apt install python3-tk`).
+
+# --- Packaging into a standalone .exe ---
+pyinstaller>=6.9,<7.0
